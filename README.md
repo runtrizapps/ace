@@ -1,1 +1,1 @@
-# This is where the content of the http://ace.run website lives
+# This is where the content of the documentation website lives (http://microsoft.github.io/ace/)
