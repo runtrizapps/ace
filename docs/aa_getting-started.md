@@ -59,15 +59,17 @@ There are many options for getting started with Cordova:
 ## 2. Add the Ace Plugin to Your Project
 In Visual Studio, open **config.xml** then add the plugin under **Plugins**, **Custom**. You have three options for adding the plugin:
 
-1. With **Plugin ID** selected, enter **cordova-plugin-ace**. This installs it [from npm](https://www.npmjs.com/package/cordova-plugin-ace).
-2. With **Local** selected, enter the path of a local copy that you downloaded (to a path with no spaces), such as the cloned GitHub repository.
-3. With **Git** selected, enter **https://github.com/microsoft/ace**.
+* With **Plugin ID** selected, enter **cordova-plugin-ace**. This installs it [from npm](https://www.npmjs.com/package/cordova-plugin-ace).
+
+* or with **Local** selected, enter the path of a local copy that you downloaded (to a path with no spaces), such as the cloned GitHub repository.
+
+* or with **Git** selected, enter **https://github.com/microsoft/ace**.
 
 <img width="50%" src="/ace/assets/images/docs/getting-started/vsconfig.png"/>
 
 If you're using a command-line interface, do one of the following:
 
-<pre style="width:300px;display:inline;">
+<pre style="width:400px">
  cordova plugin add cordova-plugin-ace
 
  taco    plugin add cordova-plugin-ace
