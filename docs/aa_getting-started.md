@@ -14,7 +14,11 @@ permalink: /docs/getting-started/
 
     <pre>npm install -g cordova</pre>
 
-* Go to the examples/AceExamples subfolder, then run:
+* Clone the Ace repository:
+
+    <pre>git clone https://github.com/Microsoft/ace.git</pre>
+
+* Go to the examples/AceExamples subfolder in the cloned repository, then run:
 
     <pre>cordova prepare
 cordova run android
@@ -23,7 +27,11 @@ cordova run ios</pre>
 **Or, Using Visual Studio:**
 
 * Ensure you have [Tools for Apache Cordova](https://www.visualstudio.com/en-us/features/cordova-vs.aspx) installed
-* Open examples/AceExamples/AceExamples.sln
+* Clone the Ace repository:
+
+    <pre>git clone https://github.com/Microsoft/ace.git</pre>
+
+* Open examples/AceExamples/AceExamples.sln from the cloned repository
 * Deploy to either an Android emulator or device (**KitKat or later, ideally Marshmallow**), or an iOS remote device
 * If you need a Marshmallow Android emulator, run the "Visual Studio Emulator for Android" program from the Start menu to download one.
 
