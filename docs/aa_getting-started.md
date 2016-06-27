@@ -18,11 +18,13 @@ permalink: /docs/getting-started/
 
     <pre>git clone https://github.com/Microsoft/ace.git</pre>
 
-* Go to the examples/AceExamples subfolder in the cloned repository, then run:
+* Go to the **examples/AceExamples** subfolder in the cloned repository, then run:
 
     <pre>cordova prepare
 cordova run android
 cordova run ios</pre>
+
+<br/>
 
 **Or, Using Visual Studio:**
 
@@ -31,7 +33,7 @@ cordova run ios</pre>
 
     <pre>git clone https://github.com/Microsoft/ace.git</pre>
 
-* Open examples/AceExamples/AceExamples.sln from the cloned repository
+* Open **examples/AceExamples/AceExamples.sln** from the cloned repository
 * Deploy to either an Android emulator or device (**KitKat or later, ideally Marshmallow**), or an iOS remote device
 * If you need a Marshmallow Android emulator, run the "Visual Studio Emulator for Android" program from the Start menu to download one.
 
@@ -55,13 +57,17 @@ There are many options for getting started with Cordova:
 <br/>
 
 ## 2. Add the Ace Plugin to Your Project
-In Visual Studio, open **config.xml** then add the plugin under **Plugins**, **Custom**. You can point it at **https://github.com/microsoft/ace** or a local copy that you download (to a path with no spaces).
+In Visual Studio, open **config.xml** then add the plugin under **Plugins**, **Custom**. You have three options for adding the plugin:
+
+1. With **Plugin ID** selected, enter **cordova-plugin-ace**. This installs it [from npm](https://www.npmjs.com/package/cordova-plugin-ace).
+2. With **Local** selected, enter the path of a local copy that you downloaded (to a path with no spaces), such as the cloned GitHub repository.
+3. With **Git** selected, enter **https://github.com/microsoft/ace**.
 
 <img width="50%" src="/ace/assets/images/docs/getting-started/vsconfig.png"/>
 
 If you're using a command-line interface, do one of the following:
 
-<pre style="width:300px">
+<pre style="width:300px;display:inline;">
  cordova plugin add cordova-plugin-ace
 
  taco    plugin add cordova-plugin-ace
