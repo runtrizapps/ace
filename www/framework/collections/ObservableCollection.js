@@ -35,7 +35,7 @@ ObservableCollection.prototype.clear = function () {
 ObservableCollection.prototype.remove = function (item) {
     for (var i = 0; i < this._items.length; i++) {
         if (this._items[i] == item) {
-            return this.removeAt(i);
+            return ace.Extensions.removeAt.call(this, i);
         }
     }
     return null;
@@ -43,7 +43,7 @@ ObservableCollection.prototype.remove = function (item) {
 
 ObservableCollection.prototype.removeAt = function (index) {
     this.invoke("RemoveAt", index);
-    return this._items.removeAt(index);
+    return ace.Extensions.removeAt.call(this._items, index);
 };
 
 module.exports = ObservableCollection;
