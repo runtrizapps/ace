@@ -218,6 +218,7 @@ XbfReader.prototype = {
         var propertyStack = new Array();
         var currentLinePosition = 0;
         var currentLineNumber = 0;
+        var peek = ace.Extensions.peek.call;
 
         while (this.reader.hasMoreBytes()) {
             var nodeType = this.reader.readByte();
@@ -244,8 +245,8 @@ XbfReader.prototype = {
 
                 case XamlNodeType.EndObject:
                     if (propertyStack.length > 0) {
-                        var parentProperty = ace.Extensions.peek.call(propertyStack);
-                        var node = ace.Extensions.peek.call(typeStack);
+                        var parentProperty = peek(propertyStack);
+                        var node = peek(typeStack);
                         parentProperty.values.push(node);
                     }
                     typeStack.pop();
@@ -258,8 +259,8 @@ XbfReader.prototype = {
 
                 case XamlNodeType.EndProperty:
                     if (typeStack.length > 0) {
-                        var parentObject = ace.Extensions.peek.call(typeStack);
-                        parentObject.properties.push(ace.Extensions.peek.call(propertyStack));
+                        var parentObject = peek(typeStack);
+                        parentObject.properties.push(peek(propertyStack));
                     }
                     propertyStack.pop();
                     break;
@@ -267,14 +268,14 @@ XbfReader.prototype = {
                 case XamlNodeType.Value:
                     var node = this.readValueNode();
                     if (propertyStack.length > 0) {
-                        var parentProperty = ace.Extensions.peek.call(propertyStack);
+                        var parentProperty = peek(propertyStack);
                         parentProperty.values.push(node);
                     }
                     break;
                 case XamlNodeType.Text:
                     var node = this.readTextNode();
                     if (propertyStack.length > 0) {
-                        var parentProperty = ace.Extensions.peek.call(propertyStack);
+                        var parentProperty = peek(propertyStack);
                         parentProperty.values.push(node);
                     }
                     break;
