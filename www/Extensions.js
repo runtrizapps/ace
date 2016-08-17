@@ -14,32 +14,26 @@ if (!String.prototype.endsWith) {
     };
 }
 
-Array.prototype.removeAt = function (index) {
-    var remainder = this.slice(index + 1);
-    this.length = index;
-    return this.push.apply(this, remainder);
-};
-
-Array.prototype.remove = function (item) {
-    var index = -1;
-    for (var i = 0; i < this.length; i++) {
-        if (this[i] == item) {
-            index = i;
-            break;
+module.exports = {
+    removeAt: function removeAt(index) {
+      var remainder = this.slice(index + 1);
+      this.length = index;
+      return this.push.apply(this, remainder);
+    },
+    remove: function remove(item) {
+        var index = -1;
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == item) {
+                index = i;
+                break;
+            }
         }
-    }
-    if (index >= 0)
-        return this.removeAt(index);
-    else
-        return null;
+        if (index >= 0)
+            return removeAt.call(this, index);
+        else
+            return null;
+    },
+    peek: function () {
+        return this[this.length - 1];
+    },
 };
-
-Array.prototype.peek = function () {
-    return this[this.length - 1];
-};
-
-Object.defineProperty(Array.prototype, "removeAt", { enumerable: false });
-Object.defineProperty(Array.prototype, "remove", { enumerable: false });
-Object.defineProperty(Array.prototype, "peek", { enumerable: false });
-
-module.exports = {};
