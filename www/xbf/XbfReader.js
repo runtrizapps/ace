@@ -244,8 +244,8 @@ XbfReader.prototype = {
 
                 case XamlNodeType.EndObject:
                     if (propertyStack.length > 0) {
-                        var parentProperty = propertyStack.peek();
-                        var node = typeStack.peek();
+                        var parentProperty = ace.Extensions.peek.call(propertyStack);
+                        var node = ace.Extensions.peek.call(typeStack);
                         parentProperty.values.push(node);
                     }
                     typeStack.pop();
@@ -258,8 +258,8 @@ XbfReader.prototype = {
 
                 case XamlNodeType.EndProperty:
                     if (typeStack.length > 0) {
-                        var parentObject = typeStack.peek();
-                        parentObject.properties.push(propertyStack.peek());
+                        var parentObject = ace.Extensions.peek.call(typeStack);
+                        parentObject.properties.push(ace.Extensions.peek.call(propertyStack));
                     }
                     propertyStack.pop();
                     break;
@@ -267,14 +267,14 @@ XbfReader.prototype = {
                 case XamlNodeType.Value:
                     var node = this.readValueNode();
                     if (propertyStack.length > 0) {
-                        var parentProperty = propertyStack.peek();
+                        var parentProperty = ace.Extensions.peek.call(propertyStack);
                         parentProperty.values.push(node);
                     }
                     break;
                 case XamlNodeType.Text:
                     var node = this.readTextNode();
                     if (propertyStack.length > 0) {
-                        var parentProperty = propertyStack.peek();
+                        var parentProperty = ace.Extensions.peek.call(propertyStack);
                         parentProperty.values.push(node);
                     }
                     break;
