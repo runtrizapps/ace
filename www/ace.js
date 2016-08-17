@@ -177,7 +177,7 @@ module.exports = {
     removeEventListener: function (event, func) {
         var eventName = event.toLowerCase();
         if (_eventHandlers[eventName]) {
-            _eventHandlers[eventName].remove(func);
+            ace.Extensions.remove.call(_eventHandlers[eventName], func);
         }
     },
 
